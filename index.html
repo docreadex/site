@@ -3,146 +3,103 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Document Viewer & Scanner</title>
+  <title>DocReadEx - Document Viewer & PDF Tools</title>
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
-
-    body {
-      font-family: 'Segoe UI', Arial, sans-serif;
-      background: #f5f5f5;
-      color: #333;
-    }
+    body { font-family: 'Segoe UI', Arial, sans-serif; background: #f5f5f5; color: #333; }
 
     header {
       background: linear-gradient(135deg, #1a73e8, #0d47a1);
-      color: white;
-      text-align: center;
-      padding: 60px 20px;
+      color: white; text-align: center; padding: 60px 20px;
     }
-
     header h1 { font-size: 2.5em; margin-bottom: 12px; }
-    header p  { font-size: 1.2em; opacity: 0.9; max-width: 600px; margin: 0 auto 8px; }
-
+    header p  { font-size: 1.15em; opacity: 0.9; max-width: 620px; margin: 0 auto 8px; }
     .badge {
-      display: inline-block;
-      background: #fff;
-      color: #1a73e8;
-      font-weight: bold;
-      border-radius: 20px;
-      padding: 6px 18px;
-      margin-top: 18px;
-      font-size: 0.95em;
+      display: inline-block; background: #fff; color: #1a73e8;
+      font-weight: bold; border-radius: 20px; padding: 6px 18px;
+      margin-top: 18px; font-size: 0.95em;
     }
 
     section {
-      max-width: 860px;
-      margin: 40px auto;
-      background: white;
-      border-radius: 12px;
-      padding: 36px;
+      max-width: 880px; margin: 40px auto; background: white;
+      border-radius: 12px; padding: 36px;
       box-shadow: 0 2px 8px rgba(0,0,0,0.08);
     }
-
     section h2 {
-      font-size: 1.6em;
-      color: #1a73e8;
-      margin-bottom: 16px;
-      border-bottom: 2px solid #e8f0fe;
-      padding-bottom: 10px;
+      font-size: 1.6em; color: #1a73e8; margin-bottom: 16px;
+      border-bottom: 2px solid #e8f0fe; padding-bottom: 10px;
     }
-
     section p { line-height: 1.8; margin-bottom: 12px; font-size: 1.05em; }
 
     .formats-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
-      gap: 12px;
-      margin-top: 16px;
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+      gap: 12px; margin-top: 16px;
     }
-
     .format-card {
-      background: #e8f0fe;
-      border-radius: 8px;
-      padding: 12px 16px;
-      text-align: center;
-      font-weight: 600;
-      color: #1a73e8;
-      font-size: 0.95em;
+      background: #e8f0fe; border-radius: 8px; padding: 12px 16px;
+      text-align: center; font-weight: 600; color: #1a73e8; font-size: 0.9em;
     }
 
-    .features-list {
-      list-style: none;
-      padding: 0;
-      margin-top: 10px;
+    .tools-grid {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 16px; margin-top: 16px;
     }
+    .tool-card {
+      background: #f3e5f5; border-radius: 10px; padding: 20px;
+      border-left: 4px solid #7b1fa2;
+    }
+    .tool-card h3 { color: #7b1fa2; margin-bottom: 8px; font-size: 1.05em; }
+    .tool-card p  { font-size: 0.95em; color: #555; line-height: 1.6; margin: 0; }
 
+    .features-list { list-style: none; padding: 0; margin-top: 10px; }
     .features-list li {
-      padding: 10px 0;
-      border-bottom: 1px solid #f0f0f0;
-      font-size: 1.05em;
-      display: flex;
-      align-items: center;
-      gap: 10px;
+      padding: 10px 0; border-bottom: 1px solid #f0f0f0;
+      font-size: 1.05em; display: flex; align-items: center; gap: 10px;
     }
-
     .features-list li:last-child { border-bottom: none; }
-
     .check { color: #34a853; font-size: 1.2em; font-weight: bold; }
 
     .privacy-box {
-      background: #f0faf4;
-      border-left: 4px solid #34a853;
-      border-radius: 8px;
-      padding: 20px;
-      margin-top: 12px;
+      background: #f0faf4; border-left: 4px solid #34a853;
+      border-radius: 8px; padding: 20px; margin-top: 12px;
     }
-
     .privacy-box p { margin-bottom: 6px; }
 
-    .contact-link {
-      color: #1a73e8;
-      text-decoration: none;
-      font-weight: 600;
-    }
-
+    .contact-link { color: #1a73e8; text-decoration: none; font-weight: 600; }
     .contact-link:hover { text-decoration: underline; }
 
-    footer {
-      text-align: center;
-      padding: 30px;
-      color: #888;
-      font-size: 0.9em;
-    }
+    footer { text-align: center; padding: 30px; color: #888; font-size: 0.9em; }
   </style>
 </head>
 <body>
 
 <!-- HERO -->
 <header>
-  <h1>Document Viewer & Scanner</h1>
-  <p>A free, powerful document viewer for Android supporting all major file formats.</p>
-  <p>No subscriptions. No ads. No limits.</p>
+  <h1>DocReadEx</h1>
+  <p>Free all-in-one Document Viewer & PDF Tools for Android.</p>
+  <p>View any file. Create PDFs. Merge PDFs. No ads. No limits.</p>
   <span class="badge">Free Android App</span>
 </header>
 
 <!-- ABOUT -->
 <section>
-  <h2>About the App</h2>
+  <h2>About DocReadEx</h2>
   <p>
-    Document Viewer & Scanner is a free Android app that lets you open, view,
-    and manage documents of all types directly on your Android device.
+    DocReadEx is a free Android app that lets you open, view, and manage documents
+    of all types — plus powerful PDF tools to create and merge PDFs right on your phone.
   </p>
   <p>
-    Most document viewer apps charge for basic features or show constant ads.
-    This app was built to give everyone a clean, fast, and completely free experience.
+    Most document viewer apps charge for basic features or show constant ads. DocReadEx
+    was built to give everyone a clean, fast, and completely free experience.
   </p>
+
   <h3 style="margin:20px 0 10px; color:#333;">Supported File Formats</h3>
   <div class="formats-grid">
     <div class="format-card">PDF</div>
     <div class="format-card">Word (.docx)</div>
     <div class="format-card">Excel (.xlsx)</div>
     <div class="format-card">PowerPoint (.pptx)</div>
-    <div class="format-card">Images (JPG/PNG)</div>
+    <div class="format-card">Images (JPG/PNG/BMP/GIF)</div>
     <div class="format-card">JSON</div>
     <div class="format-card">YAML</div>
     <div class="format-card">Markdown</div>
@@ -150,56 +107,73 @@
   </div>
 </section>
 
+<!-- PDF TOOLS -->
+<section>
+  <h2>PDF Tools</h2>
+  <p>Built-in PDF tools — no separate app needed.</p>
+  <div class="tools-grid">
+    <div class="tool-card">
+      <h3>🖼 Images to PDF</h3>
+      <p>Convert any photos or images from your gallery or camera into a PDF document. Choose page size (A4, A3, Letter), orientation, and fit mode.</p>
+    </div>
+    <div class="tool-card">
+      <h3>🔗 Merge PDFs</h3>
+      <p>Combine multiple PDF files into a single document. Pick any PDFs from your device, reorder them, and merge with one tap. Saved directly to Downloads.</p>
+    </div>
+  </div>
+</section>
+
 <!-- FEATURES -->
 <section>
   <h2>Key Features</h2>
   <ul class="features-list">
-    <li><span class="check">✔</span> Open and view PDF documents with smooth scrolling</li>
-    <li><span class="check">✔</span> View Word, Excel, and PowerPoint without Microsoft Office</li>
-    <li><span class="check">✔</span> Built-in image viewer with pinch-to-zoom</li>
+    <li><span class="check">✔</span> Smooth PDF viewing with scroll and zoom</li>
+    <li><span class="check">✔</span> View Word, Excel, PowerPoint without Microsoft Office</li>
+    <li><span class="check">✔</span> Image viewer with pinch-to-zoom (JPG, PNG, BMP, GIF)</li>
+    <li><span class="check">✔</span> Convert images to PDF (A4 / A3 / Letter, portrait/landscape)</li>
+    <li><span class="check">✔</span> Merge multiple PDFs into one file</li>
     <li><span class="check">✔</span> Share documents directly from the app</li>
-    <li><span class="check">✔</span> Mark documents as favourites</li>
+    <li><span class="check">✔</span> Recent files — quickly reopen documents</li>
+    <li><span class="check">✔</span> Mark favourite documents for quick access</li>
+    <li><span class="check">✔</span> Open files from other apps (share/intent support)</li>
     <li><span class="check">✔</span> Clean, simple interface — no clutter</li>
-    <li><span class="check">✔</span> 100% Free — no in-app purchases, no ads</li>
     <li><span class="check">✔</span> Works fully offline — no internet required</li>
+    <li><span class="check">✔</span> 100% Free — no ads, no subscriptions, no in-app purchases</li>
   </ul>
 </section>
 
-<!-- ABOUT DEVELOPER -->
+<!-- DEVELOPER -->
 <section>
   <h2>About the Developer</h2>
   <p>
-    Hi, I'm <strong>Shyam Dev</strong>, an individual Android developer based in India.
+    Hi, I'm <strong>Ghanshyam Dhanore</strong>, an individual Android developer based in India.
   </p>
   <p>
-    I built Document Viewer & Scanner because I needed a single app that could open
-    any file type without paying for a subscription. Since no free app offered all
-    these features together, I built one myself using Flutter.
+    I built DocReadEx because I needed a single app that could open any file type,
+    create PDFs from images, and merge PDFs — all for free. Since no free app offered
+    all these features together, I built one myself using Flutter.
   </p>
-  <p>
-    This is my first published Android app. I hope it helps as many people as it has helped me.
-  </p>
-  <p>Contact: <a class="contact-link" href="mailto:shyam.apps.dev@gmail.com">shyam.apps.dev@gmail.com</a></p>
+  <p>Contact: <a class="contact-link" href="mailto:ghanshyam.dhanore@gmail.com">ghanshyam.dhanore@gmail.com</a></p>
 </section>
 
-<!-- PRIVACY POLICY -->
-<section>
+<!-- PRIVACY -->
+<section id="privacy-policy">
   <h2>Privacy Policy</h2>
   <div class="privacy-box">
-    <p>Document Viewer & Scanner does <strong>not</strong> collect, store, or share any personal data.</p>
+    <p>DocReadEx does <strong>not</strong> collect, store, or share any personal data.</p>
     <p>✔ No account required</p>
-    <p>✔ No internet access needed</p>
+    <p>✔ No internet access needed to use the app</p>
     <p>✔ All files stay only on your device</p>
     <p>✔ No analytics, no tracking, no ads</p>
+    <p>✔ Camera permission used only for document scanning — no images uploaded</p>
   </div>
   <p style="margin-top:16px;">
-    For any questions, contact:
-    <a class="contact-link" href="mailto:shyam.apps.dev@gmail.com">shyam.apps.dev@gmail.com</a>
+    Questions? Contact: <a class="contact-link" href="mailto:ghanshyam.dhanore@gmail.com">ghanshyam.dhanore@gmail.com</a>
   </p>
 </section>
 
 <footer>
-  &copy; 2026 DocReadEx · Document Viewer & Scanner · All rights reserved.
+  &copy; 2026 Ghanshyam Dhanore · DocReadEx · All rights reserved.
 </footer>
 
 </body>
