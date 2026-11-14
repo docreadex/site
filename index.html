@@ -60,7 +60,11 @@
     .privacy-box p { margin-bottom: 6px; }
     .contact-link { color: #1a73e8; text-decoration: none; font-weight: 600; }
     .contact-link:hover { text-decoration: underline; }
-    footer { text-align: center; padding: 30px; color: #888; font-size: 0.9em; }
+    .legal-links { margin-top: 16px; }
+    .legal-links a { margin-right: 18px; }
+    footer { text-align: center; padding: 30px; color: #888; font-size: 0.9em; line-height: 1.8; }
+    footer a { color: #1a73e8; text-decoration: none; font-weight: 600; }
+    footer a:hover { text-decoration: underline; }
   </style>
 </head>
 <body>
@@ -77,12 +81,15 @@
 <section>
   <h2>About DocReadex - Viewer & Scanner</h2>
   <p>
-    DocReadEx is a free Android app that lets you open, view, and manage documents
+    DocReadex is a free Android app that lets you open, view, and manage documents
     of all types - plus powerful PDF tools to create and merge PDFs right on your phone.
   </p>
   <p>
-    Most document viewer apps charge for basic features or show constant ads. DocReadEx
+    Most document viewer apps charge for basic features or show constant ads. DocReadex
     was built to give everyone a clean, fast, and completely free experience.
+  </p>
+  <p>
+    DocReadex is a brand name of Ghanshyam Dhanore, an individual developer.
   </p>
 
   <h3 style="margin:20px 0 10px; color:#333;">Supported File Formats</h3>
@@ -92,6 +99,7 @@
     <div class="format-card">Excel (.xlsx)</div>
     <div class="format-card">PowerPoint (.pptx)</div>
     <div class="format-card">Images (JPG/PNG/BMP/GIF)</div>
+    <div class="format-card">CSV</div>
     <div class="format-card">JSON</div>
     <div class="format-card">YAML</div>
     <div class="format-card">Markdown</div>
@@ -110,7 +118,7 @@
     </div>
     <div class="tool-card">
       <h3>🔗 Merge PDFs</h3>
-      <p>Combine multiple PDF files into a single document. Pick any PDFs from your device, reorder them, and merge with one tap. Saved directly to Downloads.</p>
+      <p>Combine multiple PDF files into a single document. Pick any PDFs from your device, reorder them, and merge with one tap. Saved to the Download/DocReadex folder on your phone.</p>
     </div>
   </div>
 </section>
@@ -136,23 +144,29 @@
 
 <!-- PRIVACY -->
 <section id="privacy-policy">
-  <h2>Privacy Policy</h2>
+  <h2>Privacy</h2>
   <div class="privacy-box">
-    <p>DocReadEx does <strong>not</strong> collect, store, or share any personal data.</p>
+    <p>DocReadex does <strong>not</strong> collect, store, or share any personal data.</p>
     <p>✔ No account required</p>
     <p>✔ No internet access needed to use the app</p>
-    <p>✔ All files stay only on your device</p>
+    <p>✔ All files stay on your device. A file leaves it only when you tap Share and choose another app</p>
     <p>✔ No analytics, no tracking, no ads</p>
-    <p>✔ READ_MEDIA_IMAGES permission is used only when you tap "Pick from Gallery" to select images for the Images to PDF feature - images are processed on-device and never uploaded</p>
-    <p>✔ Camera permission is used only to capture images for the Images to PDF tool - photos are never uploaded, shared, or stored outside your device</p>
+    <p>✔ Camera permission is used only when you tap "Take a Photo" for the Images to PDF tool - photos are never uploaded</p>
+    <p>✔ Photos are picked with Android's own photo picker - no gallery permission is requested</p>
+    <p>✔ No storage permission on Android 10 and newer - files open through Android's file picker</p>
   </div>
-  <p style="margin-top:16px;">
+  <p class="legal-links">
+    <a class="contact-link" href="privacy.html">Read the full Privacy Policy</a>
+    <a class="contact-link" href="terms.html">Terms of Use</a>
+  </p>
+  <p style="margin-top:8px;">
     Questions? Contact: <a class="contact-link" href="mailto:docreadex@gmail.com">docreadex@gmail.com</a>
   </p>
 </section>
 
 <footer>
-  &copy; 2026 DocReadEx · All rights reserved.
+  <a href="privacy.html">Privacy Policy</a> &middot; <a href="terms.html">Terms of Use</a> &middot; <a href="mailto:docreadex@gmail.com">Contact</a><br>
+  &copy; 2025&ndash;2026 Ghanshyam Dhanore (DocReadex) &middot; All rights reserved.
 </footer>
 
 </body>
