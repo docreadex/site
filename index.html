@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>DocReadex - Viewer & Scanner</title>
+  <title>DocReadex: PDF &amp; Office Viewer</title>
+  <meta name="description" content="DocReadex: PDF &amp; Office Viewer is a free Android app to view PDF, Word, Excel, PowerPoint, CSV and more, scan documents with your camera, and create, merge, extract and convert PDFs. No ads, works offline.">
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body { font-family: 'Segoe UI', Arial, sans-serif; background: #f5f5f5; color: #333; }
@@ -12,7 +13,7 @@
       color: white; text-align: center; padding: 60px 20px;
     }
     header h1 { font-size: 2.5em; margin-bottom: 12px; }
-    header p  { font-size: 1.15em; opacity: 0.9; max-width: 620px; margin: 0 auto 8px; }
+    header p  { font-size: 1.15em; opacity: 0.9; max-width: 640px; margin: 0 auto 8px; }
     .badge {
       display: inline-block; background: #fff; color: #1a73e8;
       font-weight: bold; border-radius: 20px; padding: 6px 18px;
@@ -28,16 +29,18 @@
       border-bottom: 2px solid #e8f0fe; padding-bottom: 10px;
     }
     section p { line-height: 1.8; margin-bottom: 12px; font-size: 1.05em; }
+    section p.note { font-size: 0.92em; color: #666; margin-top: 14px; }
     .formats-grid {
       display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
       gap: 12px; margin-top: 16px;
     }
     .format-card {
       background: #e8f0fe; border-radius: 8px; padding: 12px 16px;
-      text-align: center; font-weight: 600; color: #1a73e8; font-size: 0.9em;
+      text-align: center; font-weight: 600; color: #1558b0; font-size: 0.9em;
     }
+    .format-card small { display: block; font-weight: 400; color: #5f6368; font-size: 0.85em; margin-top: 2px; }
     .tools-grid {
-      display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
       gap: 16px; margin-top: 16px;
     }
     .tool-card {
@@ -46,10 +49,14 @@
     }
     .tool-card h3 { color: #7b1fa2; margin-bottom: 8px; font-size: 1.05em; }
     .tool-card p  { font-size: 0.95em; color: #555; line-height: 1.6; margin: 0; }
+    .scan-card { background: #e0f2f1; border-left-color: #00897b; }
+    .scan-card h3 { color: #00695c; }
+    .view-card { background: #fff8e1; border-left-color: #f9a825; }
+    .view-card h3 { color: #8a5200; }
     .features-list { list-style: none; padding: 0; margin-top: 10px; }
     .features-list li {
       padding: 10px 0; border-bottom: 1px solid #f0f0f0;
-      font-size: 1.05em; display: flex; align-items: center; gap: 10px;
+      font-size: 1.05em; display: flex; align-items: flex-start; gap: 10px;
     }
     .features-list li:last-child { border-bottom: none; }
     .check { color: #34a853; font-size: 1.2em; font-weight: bold; }
@@ -62,27 +69,32 @@
     .contact-link:hover { text-decoration: underline; }
     .legal-links { margin-top: 16px; }
     .legal-links a { margin-right: 18px; }
-    footer { text-align: center; padding: 30px; color: #888; font-size: 0.9em; line-height: 1.8; }
+    footer { text-align: center; padding: 30px; color: #666; font-size: 0.9em; line-height: 1.8; }
     footer a { color: #1a73e8; text-decoration: none; font-weight: 600; }
     footer a:hover { text-decoration: underline; }
+    @media (max-width: 600px) {
+      header h1 { font-size: 1.9em; }
+      section { margin: 24px 12px; padding: 24px 18px; }
+    }
   </style>
 </head>
 <body>
 
 <!-- HERO -->
 <header>
-  <h1>DocReadex - Viewer & Scanner</h1>
-  <p>Free all-in-one Document Viewer, Scanner (PDF Tools) for Android.</p>
-  <p>View any file. Create PDFs. Merge PDFs. No ads. No limits.</p>
+  <h1>DocReadex: PDF &amp; Office Viewer</h1>
+  <p>Free all-in-one Document Viewer, Scanner and PDF Tools for Android.</p>
+  <p>View any file. Scan documents. Create, merge and extract PDFs. Convert Word, Excel and PowerPoint to PDF. No ads. No limits.</p>
   <span class="badge">Free Android App</span>
 </header>
 
 <!-- ABOUT -->
 <section>
-  <h2>About DocReadex - Viewer & Scanner</h2>
+  <h2>About DocReadex: PDF &amp; Office Viewer</h2>
   <p>
-    DocReadex is a free Android app that lets you open, view, and manage documents
-    of all types - plus powerful PDF tools to create and merge PDFs right on your phone.
+    DocReadex: PDF &amp; Office Viewer is a free Android app that lets you open, view, and manage documents
+    of all types - plus a document scanner and powerful PDF tools to scan, create,
+    merge, extract and convert PDFs right on your phone.
   </p>
   <p>
     Most document viewer apps charge for basic features or show constant ads. DocReadex
@@ -95,30 +107,94 @@
   <h3 style="margin:20px 0 10px; color:#333;">Supported File Formats</h3>
   <div class="formats-grid">
     <div class="format-card">PDF</div>
-    <div class="format-card">Word (.docx)</div>
-    <div class="format-card">Excel (.xlsx)</div>
-    <div class="format-card">PowerPoint (.pptx)</div>
-    <div class="format-card">Images (JPG/PNG/BMP/GIF)</div>
-    <div class="format-card">CSV</div>
+    <div class="format-card">Word<small>.docx</small></div>
+    <div class="format-card">Excel<small>.xlsx</small></div>
+    <div class="format-card">PowerPoint<small>.pptx</small></div>
+    <div class="format-card">CSV / TSV</div>
+    <div class="format-card">Images<small>JPG, PNG, WebP, GIF, BMP</small></div>
     <div class="format-card">JSON</div>
     <div class="format-card">YAML</div>
     <div class="format-card">Markdown</div>
-    <div class="format-card">Plain Text</div>
+    <div class="format-card">Text<small>TXT, LOG, XML and more</small></div>
+  </div>
+  <p class="note">
+    Older binary Word, Excel and PowerPoint files (.doc, .xls, .ppt) cannot be opened.
+    Save them as .docx, .xlsx or .pptx first.
+  </p>
+</section>
+
+<!-- SCANNER -->
+<section>
+  <h2>Document Scanner</h2>
+  <p>Turn your phone's camera into a document scanner. Everything happens on your phone - nothing is uploaded.</p>
+  <div class="tools-grid">
+    <div class="tool-card scan-card">
+      <h3>📷 Take a Picture</h3>
+      <p>Photograph a page with the built-in camera (flash and tap-to-focus included), or choose an existing photo from your gallery.</p>
+    </div>
+    <div class="tool-card scan-card">
+      <h3>✂️ Auto-Detect Page Edges</h3>
+      <p>DocReadex finds the edges of the page and straightens it. Drag the corners to fine-tune, or keep the whole photo.</p>
+    </div>
+    <div class="tool-card scan-card">
+      <h3>🎨 Clean Up the Scan</h3>
+      <p>Choose Original, Enhanced, Gray or Black &amp; White, adjust brightness and contrast, and rotate left or right.</p>
+    </div>
+    <div class="tool-card scan-card">
+      <h3>📄 Scan to PDF</h3>
+      <p>In PDF Tools, tap Take a Photo to scan a page straight into your PDF. Scan as many pages as you need, then create the PDF. Or save a single scan as a picture on your phone.</p>
+    </div>
   </div>
 </section>
 
 <!-- PDF TOOLS -->
 <section>
   <h2>PDF Tools</h2>
-  <p>Built-in PDF tools - no separate app needed.</p>
+  <p>Built-in PDF tools - no separate app needed. PDFs you create are saved in the Download/DocReadex folder on your phone.</p>
   <div class="tools-grid">
     <div class="tool-card">
       <h3>🖼 Images to PDF</h3>
-      <p>Convert any photos or images from your gallery or camera into a PDF document. Choose page size (A4, A3, Letter), orientation, and fit mode.</p>
+      <p>Convert photos from your gallery or camera into a PDF. Choose page size (A4, A3, Letter), portrait or landscape, and fit or fill. Drag to reorder pages, and crop or clean up each picture before you save.</p>
     </div>
     <div class="tool-card">
       <h3>🔗 Merge PDFs</h3>
-      <p>Combine multiple PDF files into a single document. Pick any PDFs from your device, reorder them, and merge with one tap. Saved to the Download/DocReadex folder on your phone.</p>
+      <p>Combine two or more PDF files into a single document. Pick PDFs from your device, put them in the order you want, give the file a name, and merge with one tap.</p>
+    </div>
+    <div class="tool-card">
+      <h3>✂️ Extract PDF Pages</h3>
+      <p>Open a PDF and see every page as a thumbnail. Tap the pages you want, use Select all, or type a range like 1-3, 5, 8-10. Save them as a new PDF.</p>
+    </div>
+    <div class="tool-card">
+      <h3>📑 Convert to PDF</h3>
+      <p>Turn Word, Excel, PowerPoint, CSV, text, JSON and Markdown files into PDF. Open the file, choose Convert to PDF in the menu, then save or share it with Android's Save as PDF.</p>
+    </div>
+  </div>
+</section>
+
+<!-- VIEWERS -->
+<section>
+  <h2>Powerful Viewers</h2>
+  <p>Each file type opens in a viewer made for it.</p>
+  <div class="tools-grid">
+    <div class="tool-card view-card">
+      <h3>📕 PDF</h3>
+      <p>Smooth scrolling, pinch-to-zoom and a page counter.</p>
+    </div>
+    <div class="tool-card view-card">
+      <h3>📝 Word, 📊 Excel, 📽 PowerPoint</h3>
+      <p>Open .docx, .xlsx and .pptx files without Microsoft Office, with zoom. Excel workbooks have sheet navigation.</p>
+    </div>
+    <div class="tool-card view-card">
+      <h3>🗒 CSV / TSV</h3>
+      <p>A spreadsheet-style table with a sticky header, row numbers, search, pinch-to-zoom, and cell selection with copy.</p>
+    </div>
+    <div class="tool-card view-card">
+      <h3>{ } JSON, YAML, Markdown, Text</h3>
+      <p>Colour-highlighted JSON and YAML, rendered Markdown, and plain text - all with zoom.</p>
+    </div>
+    <div class="tool-card view-card">
+      <h3>🖼 Images</h3>
+      <p>Open JPG, PNG, WebP, GIF and BMP pictures with pinch-to-zoom and pan.</p>
     </div>
   </div>
 </section>
@@ -128,14 +204,20 @@
   <h2>Key Features</h2>
   <ul class="features-list">
     <li><span class="check">✔</span> Smooth PDF viewing with scroll and zoom</li>
-    <li><span class="check">✔</span> View Word, Excel, PowerPoint without Microsoft Office</li>
-    <li><span class="check">✔</span> Image viewer with pinch-to-zoom (JPG, PNG, BMP, GIF)</li>
+    <li><span class="check">✔</span> View Word, Excel, PowerPoint and CSV without Microsoft Office</li>
+    <li><span class="check">✔</span> Document scanner: camera, automatic page-edge detection, straightening and filters</li>
+    <li><span class="check">✔</span> Scan to PDF: take pictures of pages and make a PDF</li>
     <li><span class="check">✔</span> Convert images to PDF (A4 / A3 / Letter, portrait/landscape)</li>
     <li><span class="check">✔</span> Merge multiple PDFs into one file</li>
+    <li><span class="check">✔</span> Extract the pages you pick from a PDF into a new PDF</li>
+    <li><span class="check">✔</span> Convert Word, Excel, PowerPoint, CSV, text, JSON and Markdown to PDF</li>
+    <li><span class="check">✔</span> Search inside CSV files and copy cells</li>
+    <li><span class="check">✔</span> Image viewer with pinch-to-zoom (JPG, PNG, WebP, GIF, BMP)</li>
     <li><span class="check">✔</span> Share documents directly from the app</li>
     <li><span class="check">✔</span> Recent files - quickly reopen documents</li>
-    <li><span class="check">✔</span> Mark favourite documents for quick access</li>
-    <li><span class="check">✔</span> Open files from other apps (share/intent support)</li>
+    <li><span class="check">✔</span> Open files from other apps (Open with / Share to DocReadex)</li>
+    <li><span class="check">✔</span> Light, dark or system theme</li>
+    <li><span class="check">✔</span> File information: size, type and folder</li>
     <li><span class="check">✔</span> Clean, simple interface - no clutter</li>
     <li><span class="check">✔</span> Works fully offline - no internet required</li>
     <li><span class="check">✔</span> 100% Free - no ads, no subscriptions, no in-app purchases</li>
@@ -151,7 +233,7 @@
     <p>✔ No internet access needed to use the app</p>
     <p>✔ All files stay on your device. A file leaves it only when you tap Share and choose another app</p>
     <p>✔ No analytics, no tracking, no ads</p>
-    <p>✔ Camera permission is used only when you tap "Take a Photo" for the Images to PDF tool - photos are never uploaded</p>
+    <p>✔ Camera permission is used only when you tap "Take a Photo" in the scanner or the Images to PDF tool - photos are never uploaded</p>
     <p>✔ Photos are picked with Android's own photo picker - no gallery permission is requested</p>
     <p>✔ No storage permission on Android 10 and newer - files open through Android's file picker</p>
   </div>
